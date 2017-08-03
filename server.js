@@ -15,12 +15,19 @@ var roster = [
 
 //define GET route that returns a welcome msg
 app.get("/", function(req, res) {
-  res.send("Welcome to the student roster page!");
+    res.send("Welcome to the student roster page!");
 });
 
 //get route that returns 3 students
 app.get("/students", function(req, res) {
-  res.json("Welcome to the student roster page!");
+    res.json("Welcome to the student roster page!");
+});
+
+//return a student by ID
+app.get('/students/:studentId', function (req, res) {
+    res.json(roster[
+        req.params.studentId
+    ]);
 });
 
 
